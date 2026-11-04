@@ -16,4 +16,10 @@ class CalculadoraDescontoTDDTest {
         assertEquals(540.0, calc.calcularValorFinal(600.0, false), 0.001);
         assertEquals(500.0, calc.calcularValorFinal(500.0, false), 0.001); // limite: sem desconto
     }
+
+    @Test
+    void deveAplicar20PorcentoAcimaDe1000() {
+        assertEquals(960.0, calc.calcularValorFinal(1200.0, false), 0.001);
+        assertEquals(900.0, calc.calcularValorFinal(1000.0, false), 0.001); // limite: ainda 10%
+    }
 }
