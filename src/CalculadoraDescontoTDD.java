@@ -3,12 +3,16 @@ public class CalculadoraDescontoTDD {
         if (valorTotal <= 0) {
             throw new IllegalArgumentException("O valor total dos itens não pode ser zero ou negativo.");
         }
+        double desconto = 0.0;
         if (valorTotal > 1000.0) {
-            return valorTotal * 0.80;
+            desconto = 0.20;
+        } else if (valorTotal > 500.0) {
+            desconto = 0.10;
         }
-        if (valorTotal > 500.0) {
-            return valorTotal * 0.90;
+        double valorComDesconto = valorTotal * (1 - desconto);
+        if (isVip) {
+            valorComDesconto = valorComDesconto * 0.95;
         }
-        return valorTotal;
+        return valorComDesconto;
     }
 }
