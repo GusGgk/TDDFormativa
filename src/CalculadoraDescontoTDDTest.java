@@ -27,4 +27,11 @@ class CalculadoraDescontoTDDTest {
     void deveAplicar5PorcentoAdicionalParaVip() {
         assertEquals(513.0, calc.calcularValorFinal(600.0, true), 0.001);
     }
+
+    @Test
+    void deveCobrarFreteAbaixoDe100() {
+        assertEquals(95.0, calc.calcularValorFinal(80.0, false), 0.001);
+        assertEquals(110.0, calc.calcularValorFinal(100.0, true), 0.001); // VIP: 95 + 15 de frete
+        assertEquals(100.0, calc.calcularValorFinal(100.0, false), 0.001); // limite: sem frete
+    }
 }
