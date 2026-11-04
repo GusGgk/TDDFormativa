@@ -22,4 +22,9 @@ class CalculadoraDescontoTDDTest {
         assertEquals(960.0, calc.calcularValorFinal(1200.0, false), 0.001);
         assertEquals(900.0, calc.calcularValorFinal(1000.0, false), 0.001); // limite: ainda 10%
     }
+
+    @Test
+    void deveAplicar5PorcentoAdicionalParaVip() {
+        assertEquals(513.0, calc.calcularValorFinal(600.0, true), 0.001);
+    }
 }
