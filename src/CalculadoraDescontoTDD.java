@@ -3,6 +3,9 @@ public class CalculadoraDescontoTDD {
         if (valorTotal <= 0) {
             throw new IllegalArgumentException("O valor total dos itens não pode ser zero ou negativo.");
         }
+        if (valorTotal > 1000.0) {
+            return valorTotal * 0.80;
+        }
         if (valorTotal > 500.0) {
             return valorTotal * 0.90;
         }
